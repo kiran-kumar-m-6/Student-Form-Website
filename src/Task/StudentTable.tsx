@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "./StudentForms.css";
 import { SET_EDIT_STUDENT } from "../redux/actions";
 import { Student } from "../types/Student";
+import { useNavigate } from "react-router-dom";
 
   interface RootState {
     students: {
@@ -26,18 +27,20 @@ import { Student } from "../types/Student";
       });
     };
 
+    const navigator = useNavigate();
+
 
     const handleDelete = (id: number) => {
       // dispatch({ type: DELETE_STUDENT, payload: id });
 
 
-      if(students.length > 1){
-         dispatch({ type: DELETE_STUDENT, payload: id });
-
-      return
+      if(students.length <= 1){
+        navigator('/');
+        dispatch({ type: DELETE_STUDENT, payload: id });
+        return
       }
-       dispatch({ type: DELETE_STUDENT, payload: id });
-       //naviga
+      dispatch({ type: DELETE_STUDENT, payload: id });
+       
 
     };
 

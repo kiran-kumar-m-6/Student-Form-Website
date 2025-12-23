@@ -10,13 +10,20 @@ import { AnyAction } from "redux";
 
 interface StudentState {
   students: Student[];
-  idCounter: number;
+  idCounter: string;
   selectedStudent: Student | null;
 }
 
+const generateNextId = (currentId: string): string => {
+  const match = currentId.match(/STUD(\d+)/);
+  if (!match) return "STUD001";
+  const nextNum = parseInt(match[1]) + 1;
+  return `STUD${String(nextNum).padStart(3, "0")}`;
+};
+
 const initialState: StudentState = {
   students: [],
-  idCounter: 1,
+  idCounter: "STUD001",
   selectedStudent: null,
 };
 
@@ -32,7 +39,7 @@ const studentReducer = (
           ...state.students,
           { ...action.payload, id: state.idCounter },
         ],
-        idCounter: state.idCounter + 1,
+        idCounter: generateNextId(state.idCounter),
       };
 
     case SET_EDIT_STUDENT:
