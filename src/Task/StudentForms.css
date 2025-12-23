@@ -1,0 +1,170 @@
+header, section {
+    background-color: rgb(83, 204, 164);
+    text-align: center;
+    border-radius: 2px;
+    margin: 5px;
+    padding: 10px;
+    width: 97vw;
+}
+
+.details {
+    border: 2px;
+    padding: 10px;
+    border-color: rgb(95, 93, 93);
+    border-style: solid;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-left: 0px;
+}
+
+.details:hover {
+    border-color: black;
+}
+
+
+
+label {
+    margin: 8px;
+    font-family: 'Times New Roman';
+    font-size: large;
+    padding: 5px;
+}
+
+input {
+    margin: 5px;
+    font-size: medium;
+    font-family: 'Times New Roman';
+    padding: 3px;
+    
+}
+
+input:hover{
+    border-color: black;
+}
+
+form {
+    border: 3px;
+    padding: 10px;
+    border-color: rgb(95, 93, 93);
+    
+}
+
+select, option {
+    padding: 3px;
+    font-family: 'Times New Roman';
+    font-size: medium;
+}
+
+select:hover {
+    border-color: black;
+}
+
+.btn {
+    border: 0px;
+    outline: 0px;
+    width: 100%;
+    background-color: rgb(83, 204, 164);
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 800;
+    font-size: larger;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: rgb(70, 185, 147);
+}
+
+.btns {
+    border: 0px;
+    outline: 0px;
+    background-color: rgb(83, 204, 164);
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 800;
+    font-size: larger;
+    margin: 5px;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deleteBtn:hover {
+    background-color: red;
+}
+
+.editBtn:hover {
+    background-color: rgb(57, 255, 57);
+}
+
+.view-head {
+    text-align: center;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+    border: 0px;
+    outline: 0px;
+    background-color: rgb(83, 204, 164);
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.table-container {
+    border-color: rgb(95, 93, 93);
+    margin-bottom: auto;
+}
+
+table {
+    
+    border-color: grey;
+    border: 2px;
+    /* border-collapse: collapse; */
+    border-style: solid;
+    margin-top: 10px;
+    border-radius: 5px;
+    /* margin-top: 25px; */
+    width: 100%;
+    /* font-weight: 500; */
+}
+
+th, td {
+    border-color: grey;
+    border-radius: 2px;
+    padding: 2px;
+    border: 2px;
+    /* border-collapse: collapse; */
+    border-style: ridge;
+    font-weight: 500;
+}
+
+th {
+    width: 130px;
+}
+
+td {
+    width: 100px;
+}
+
+
+
+Link:link {
+    color: black;
+}
+
+Link:visited {
+    color: black;
+}
+
+
+.table-heading {
+    
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+}
