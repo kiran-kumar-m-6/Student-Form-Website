@@ -14,16 +14,20 @@ interface StudentState {
   selectedStudent: Student | null;
 }
 
-const generateNextId = (currentId: string): string => {
-  const match = currentId.match(/STUD(\d+)/);
-  if (!match) return "STUD001";
-  const nextNum = parseInt(match[1]) + 1;
-  return `STUD${String(nextNum).padStart(3, "0")}`;
+const generateNextId = (): string => {
+  return uuid();
+};
+
+const uuid = () => {
+  return 'xxyxxxyxxxxx4xxxbxxxxxyxxyxxyxxx'.replace(/[xy]/g, function(c) {
+    const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
 };
 
 const initialState: StudentState = {
   students: [],
-  idCounter: "STUD001",
+  idCounter: uuid(),
   selectedStudent: null,
 };
 
@@ -33,13 +37,14 @@ const studentReducer = (
 ): StudentState => {
   switch (action.type) {
     case ADD_STUDENT:
+      console.log("Present ID:", state.idCounter);
       return {
         ...state,
         students: [
           ...state.students,
           { ...action.payload, id: state.idCounter },
         ],
-        idCounter: generateNextId(state.idCounter),
+        idCounter: generateNextId(),
       };
 
     case SET_EDIT_STUDENT:

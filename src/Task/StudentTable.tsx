@@ -31,27 +31,18 @@ import { useNavigate } from "react-router-dom";
 
 
     const handleDelete = (id: number) => {
-      // dispatch({ type: DELETE_STUDENT, payload: id });
-
-
       if(students.length <= 1){
         navigator('/');
-        dispatch({ type: DELETE_STUDENT, payload: id });
-        return
       }
       dispatch({ type: DELETE_STUDENT, payload: id });
-       
-
     };
 
     return (
       <div className="table-container">
-        
         <section className="view-head table-heading">
           <h1>Your Details</h1>
         </section>
         <button className="btns" ><Link to='/'>Form</Link></button>
-
         <table id="final-table">
           <thead>
             <tr>
@@ -63,7 +54,6 @@ import { useNavigate } from "react-router-dom";
               <th>Action</th>
             </tr>
           </thead>
-
           <tbody>
             {students.map((s) => (
               <tr key={s.id}>
@@ -74,7 +64,7 @@ import { useNavigate } from "react-router-dom";
                 <td>{s.mobile}</td>
                 <td>
                   <button className="btns editBtn" onClick={() => handleEdit(s)}><Link to='/'>Edit</Link></button>
-                  <button className="btns deleteBtn" onClick={() => handleDelete(s.id!)} >Delete</button>
+                  <button className="btns deleteBtn" onClick={() => handleDelete(s.id!)}>Delete</button>
                 </td>
               </tr>
             ))}

@@ -50,7 +50,7 @@ const StudentForms: React.FC = () => {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(student, editId)
+    console.log(student)
 
     if (editId !== null) {
       console.log("Updating student with ID:", editId);
